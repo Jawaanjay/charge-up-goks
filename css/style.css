@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* =========================================================================
+   DESIGN SYSTEM TOKENS — Powered by ui-ux-pro-max-skill
+   Target: Smart IoT Power Bank Rental Station Ecosystem (Dark OLED + Glassmorphism)
+   Specification: W3C Design Tokens Community Group (DTCG) Compliant
+   ========================================================================= */
+
+:root {
+    /* --- LAYER 1: PRIMITIVE COLOR TOKENS --- */
+    --primitive-black: #000000;
+    --primitive-obsidian: #070a13;
+    --primitive-slate-950: #020617;
+    --primitive-slate-900: #0f172a;
+    --primitive-slate-850: #1b2336;
+    --primitive-slate-800: #1e293b;
+    --primitive-slate-700: #334155;
+    --primitive-slate-600: #475569;
+    --primitive-slate-400: #94a3b8;
+    --primitive-slate-300: #cbd5e1;
+    --primitive-slate-100: #f1f5f9;
+    --primitive-slate-50: #f8fafc;
+    --primitive-white: #ffffff;
+
+    /* Tech Brand Accents */
+    --primitive-cyan-400: #22d3ee;
+    --primitive-cyan-500: #00f2fe;
+    --primitive-cyan-600: #0891b2;
+    --primitive-sky-400: #38bdf8;
+    --primitive-sky-500: #0284c7;
+    --primitive-emerald-400: #10b981;
+    --primitive-emerald-500: #22c55e;
+    --primitive-emerald-600: #16a34a;
+    --primitive-orange-500: #ff5500;
+    --primitive-purple-500: #8b5cf6;
+    --primitive-red-500: #ef4444;
+
+    /* --- LAYER 2: SEMANTIC TOKENS (from colors.csv & MASTER.md) --- */
+    --color-primary: #1e293b;
+    --color-on-primary: #ffffff;
+    --color-secondary: #334155;
+    --color-on-secondary: #ffffff;
+    --color-accent: #22c55e;
+    --color-on-accent: #0f172a;
+    --color-background: #000000;
+    --color-foreground: #f8fafc;
+    --color-card: #1b2336;
+    --color-card-foreground: #f8fafc;
+    --color-muted: #272f42;
+    --color-muted-foreground: #94a3b8;
+    --color-border: #475569;
+    --color-destructive: #ef4444;
+    --color-on-destructive: #000000;
+    --color-ring: #00f2fe;
+
+    /* Cyan Cyber Electric Brand Accents */
+    --cyan-primary: #00f2fe;
+    --blue-accent: #38bdf8;
+    --orange-accent: #ff5500;
+    --green-accent: #22c55e;
+    --bg-dark: #000000;
+    --bg-card: rgba(27, 35, 54, 0.75);
+    --border-glass: rgba(255, 255, 255, 0.1);
+
+    /* --- LAYER 3: SPACING & SHADOW DEPTHS --- */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.7);
+    --shadow-neon-cyan: 0 0 25px -5px rgba(0, 242, 254, 0.35);
+    --shadow-neon-green: 0 0 25px -5px rgba(34, 197, 94, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-dark);
+    color: #f8fafc;
+}
+
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0284c7;
+}
+
+/* Dark Studio Aesthetic */
+.bg-ambient {
+    background: radial-gradient(circle at 50% 10%, rgba(2, 132, 199, 0.12) 0%, transparent 55%),
+                radial-gradient(circle at 20% 40%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                #000000;
+}
+
+/* Apple Watch Style Giant Backdrop Typography */
+.giant-backdrop-text {
+    font-size: clamp(4rem, 16vw, 15rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: rgba(255, 255, 255, 0.04);
+    text-transform: uppercase;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Apple-style Giant Numbers */
+.giant-stat-number {
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+}
+
+/* Sticky Scrollytelling Viewport */
+.scrolly-container {
+    position: relative;
+    width: 100%;
+}
+
+.scrolly-canvas-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.scrolly-canvas-sticky canvas {
+    pointer-events: auto;
+}
+
+.scrolly-step {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem 1rem;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.scrolly-card-interactive {
+    pointer-events: auto;
+}
+
+/* Hardware Callout Pin & Leader Line */
+.callout-badge {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.callout-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--cyan-primary);
+    box-shadow: 0 0 10px var(--cyan-primary);
+}
+
+/* Campus Swatch Buttons */
+.swatch-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    padding: 3px;
+    border: 2px solid transparent;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.swatch-btn.active {
+    border-color: #ffffff;
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+.swatch-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Glassmorphism Components */
+.glass-panel {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-glass);
+}
+
+.glass-card {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 12px 30px -10px rgba(0, 242, 254, 0.18);
+}
+
+/* Text Gradients */
+.text-gradient {
+    background: linear-gradient(135deg, #ffffff 20%, #38bdf8 70%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-orange {
+    background: linear-gradient(135deg, #ffffff 20%, #fb923c 60%, #ff5500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Phone Simulator Frame */
+.phone-bezel {
+    width: 320px;
+    height: 640px;
+    background: #000;
+    border: 6px solid #1e293b;
+    border-radius: 46px;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9),
+                0 0 40px rgba(0, 242, 254, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.dynamic-island {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 24px;
+    background: #000;
+    border-radius: 20px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+/* Animated Scanner Laser */
+.scan-laser-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00f2fe, #38bdf8, transparent);
+    box-shadow: 0 0 12px #00f2fe;
+    animation: scanMove 2.2s ease-in-out infinite alternate;
+}
+@keyframes scanMove {
+    0% { top: 15%; opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { top: 85%; opacity: 0.2; }
+}
+
+/* Sound Switch Badge */
+.sound-toggle-btn {
+    transition: all 0.2s ease;
+}
+.sound-toggle-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Chip filter buttons */
+.chip-btn.active {
+    background: #0284c7;
+    color: #ffffff;
+    border-color: #38bdf8;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+/* UI/UX Pro Max Accessibility & Interaction Enhancements */
+:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+}
+
+button, a, input, select, textarea {
+    transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
